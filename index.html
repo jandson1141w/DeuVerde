@@ -363,11 +363,13 @@ tbody tr:last-child td { border-bottom: 0; }
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
   </svg>
 
+  <!-- Âncora do topo: o cabeçalho é fixo (sticky), por isso não serve de destino -->
+  <span id="inicio"></span>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <header class="site-header" id="topo">
+  <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#topo" aria-label="Deu Verde, início">
+      <a class="brand" href="#inicio" aria-label="Deu Verde, início">
         <img src="assets/img/logo-mark.png" alt="" width="36" height="36">
         <span><span class="b1">Deu</span><span class="b2">Verde</span></span>
       </a>
@@ -791,7 +793,7 @@ tbody tr:last-child td { border-bottom: 0; }
             <li>Reduzir riscos de contaminação do solo e da água</li>
             <li>Promover a educação ambiental</li>
           </ul>
-          <a class="btn btn-primary" href="#topo">Voltar ao topo</a>
+          <a class="btn btn-primary" href="#inicio">Voltar ao topo</a>
         </div>
       </div>
     </section>
