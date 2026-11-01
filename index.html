@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Deu Verde | Tecnologia conectando pessoas a um planeta melhor</title>
+  <meta name="description" content="Deu Verde: plataforma digital fictícia para denunciar descartes irregulares e encontrar pontos de coleta de lixo eletrônico. Projeto Desafio Green Tech.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Deu Verde | Desafio Green Tech">
+  <meta property="og:description" content="Tecnologia conectando pessoas a um planeta melhor.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <!-- Define o tema antes da página aparecer, para não piscar -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("dv-theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Ícones -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#topo" aria-label="Deu Verde, início">
+        <img src="assets/img/logo-mark.png" alt="" width="36" height="36">
+        <span><span class="b1">Deu</span><span class="b2">Verde</span></span>
+      </a>
+      <nav id="menu" class="nav" aria-label="Principal">
+        <ul>
+          <li><a href="#ideia">Ideia</a></li>
+          <li><a href="#empresa">Empresa</a></li>
+          <li><a href="#diagnostico">Diagnóstico</a></li>
+          <li><a href="#legislacao">Legislação</a></li>
+          <li><a href="#gestao">Gestão</a></li>
+          <li><a href="#plano">Plano de ação</a></li>
+        </ul>
+      </nav>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Ativar modo escuro" title="Alternar modo claro e escuro">
+        <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <picture>
+            <source srcset="assets/img/logo.webp" type="image/webp">
+            <img class="hero-logo" src="assets/img/logo.png" alt="Logo da Deu Verde: um pin de localização com uma folha sobre um mapa" width="640" height="642">
+          </picture>
+          <p class="eyebrow">Desafio Green Tech · Negócio sustentável</p>
+          <h1>Deu Verde.</h1>
+          <p class="lead">Tecnologia conectando pessoas a um planeta melhor.</p>
+          <p>Uma plataforma digital colaborativa para denunciar descartes irregulares e encontrar pontos de coleta de lixo eletrônico.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#ideia">Conhecer a ideia</a>
+            <a class="btn btn-ghost" href="#prototipo">Ver o protótipo</a>
+          </div>
+          <p class="note">Empresa fictícia criada para fins acadêmicos.</p>
+        </div>
+        <ul class="hero-stats" aria-label="Metas para os primeiros 12 meses">
+          <li><strong>50</strong><span>pontos de coleta</span></li>
+          <li><strong>500</strong><span>usuários</span></li>
+          <li><strong>100</strong><span>denúncias</span></li>
+          <li><strong>5</strong><span>parcerias</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SEMANA 1 -->
+    <section id="ideia" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="tag">Semana 1</span>
+          <h2>A ideia do negócio</h2>
+          <p>A Deu Verde é uma empresa fictícia de tecnologia e sustentabilidade. Ela conecta cidadãos, cooperativas, empresas de reciclagem e órgãos públicos em um único lugar.</p>
+        </header>
+
+        <div class="grid grid-2">
+          <article class="card reveal">
+            <h3>O problema</h3>
+            <ul class="list">
+              <li>Descarte incorreto de resíduos em terrenos, ruas, calçadas e rios, causando poluição, entupimento de bueiros, alagamentos e contaminação do solo e da água.</li>
+              <li>Dificuldade para encontrar locais adequados para descartar lixo eletrônico, como celulares, computadores, cabos, carregadores, pilhas e baterias.</li>
+              <li>Dificuldade para comunicar problemas ambientais aos responsáveis e acompanhar o encaminhamento das ocorrências.</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>A solução</h3>
+            <p>Uma plataforma na qual o usuário registra problemas ambientais com foto, descrição e localização. Quando houver canais ou parcerias adequadas, as ocorrências são encaminhadas às entidades responsáveis.</p>
+            <p>A plataforma também terá um mapa de pontos de coleta de lixo eletrônico e um assistente virtual com orientações sobre o descarte correto.</p>
+          </article>
+        </div>
+
+        <h3 class="subhead reveal">Funcionalidades principais</h3>
+        <div class="grid grid-3">
+          <article class="card feature reveal"><span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-camera"/></svg></span><h4>Denúncias</h4><p>Registro de descarte irregular com foto, descrição e localização.</p></article>
+          <article class="card feature reveal"><span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-pin"/></svg></span><h4>Mapa de coleta</h4><p>Pontos de coleta de lixo eletrônico, com os materiais aceitos em cada um.</p></article>
+          <article class="card feature reveal"><span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span><h4>Assistente virtual</h4><p>Orientações sobre o descarte correto de diferentes materiais.</p></article>
+          <article class="card feature reveal"><span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-megaphone"/></svg></span><h4>Campanhas</h4><p>Conscientização e iniciativas ambientais verificadas.</p></article>
+          <article class="card feature reveal"><span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-bell"/></svg></span><h4>Acompanhamento</h4><p>Atualizações das ocorrências, conforme a integração com entidades responsáveis.</p></article>
+          <article class="card feature reveal"><span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span><h4>Objetivo</h4><p>Facilitar o acesso à informação ambiental e incentivar o descarte correto.</p></article>
+        </div>
+
+        <div class="card reveal audience">
+          <h3>Público-alvo</h3>
+          <ul class="chips">
+            <li>Cidadãos</li><li>Comunidades</li><li>Prefeituras</li><li>Cooperativas de reciclagem</li>
+            <li>Empresas de gerenciamento de resíduos</li><li>Organizações ambientais e sociais</li><li>Instituições de ensino</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROTÓTIPO -->
+    <section id="prototipo" class="section section-alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="tag">Semana 6</span>
+          <h2>Protótipo conceitual</h2>
+          <p>A tela inicial reúne as quatro funções principais. Toque em uma delas para ver como funcionará.</p>
+        </header>
+
+        <div class="proto reveal">
+          <div class="phone" role="group" aria-label="Simulação da tela inicial da plataforma">
+            <div class="phone-top"><img src="assets/img/logo-mark.png" alt="" width="26" height="26">Deu Verde</div>
+            <div class="phone-buttons" role="tablist" aria-label="Funções da plataforma">
+              <button type="button" role="tab" aria-selected="true" aria-controls="painel-proto" id="tab-denunciar" data-key="denunciar"><svg class="ico" aria-hidden="true"><use href="#i-camera"/></svg>Denunciar problema</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="painel-proto" id="tab-pontos" data-key="pontos"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Pontos de coleta</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="painel-proto" id="tab-assistente" data-key="assistente"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>Assistente virtual</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="painel-proto" id="tab-campanhas" data-key="campanhas"><svg class="ico" aria-hidden="true"><use href="#i-megaphone"/></svg>Campanhas</button>
+            </div>
+          </div>
+          <div class="proto-panel card" id="painel-proto" role="tabpanel" aria-live="polite" tabindex="0">
+            <h3 id="proto-title">Denunciar problema</h3>
+            <p id="proto-text">Registre um descarte irregular com foto e localização. A equipe analisa os registros para reduzir informações falsas ou duplicadas e, quando houver parceria ou canal apropriado, encaminha a ocorrência à entidade responsável.</p>
+            <p class="note">A plataforma não substitui os canais oficiais de denúncia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEMANA 2 -->
+    <section id="empresa" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="tag">Semana 2</span>
+          <h2>A empresa</h2>
+          <p>A Deu Verde é do setor de tecnologia e sustentabilidade. Sua sede fica em Jaú (SP), em um pequeno escritório compartilhado, e parte do trabalho é remoto, já que o serviço é digital.</p>
+        </header>
+
+        <h3 class="subhead reveal">Estrutura e equipe</h3>
+        <div class="grid grid-4">
+          <article class="card reveal"><h4>Tecnologia da Informação</h4><p>Desenvolvimento, manutenção e segurança da plataforma.</p><p class="role">Desenvolvedor de sistemas</p></article>
+          <article class="card reveal"><h4>Geotecnologias</h4><p>Mapas, localização e organização dos pontos de coleta.</p><p class="role">Analista de geotecnologias</p></article>
+          <article class="card reveal"><h4>Gestão ambiental</h4><p>Orientação sobre descarte, reciclagem e sustentabilidade.</p><p class="role">Gestor ambiental</p></article>
+          <article class="card reveal"><h4>Atendimento e comunicação</h4><p>Suporte aos usuários e divulgação de campanhas.</p><p class="role">Atendimento e comunicação</p></article>
+        </div>
+        <p class="center reveal">E a área de <strong>administração e parcerias</strong>: planejamento, controle de recursos e contato com instituições parceiras (gestor administrativo).</p>
+
+        <div class="grid grid-2">
+          <article class="card reveal">
+            <h3>Como funciona</h3>
+            <ol class="steps">
+              <li>Começa como uma plataforma web. Em uma etapa futura, poderá virar aplicativo para celulares.</li>
+              <li>O usuário informa o tipo de problema, descreve e pode anexar foto e localização.</li>
+              <li>A equipe analisa os registros para evitar informações falsas ou duplicadas.</li>
+              <li>No mapa, o usuário escolhe o tipo de material e vê endereço, materiais aceitos e horário de funcionamento.</li>
+            </ol>
+          </article>
+          <article class="card reveal">
+            <h3>Clientes, parceiros e receita</h3>
+            <p>As funções principais são <strong>gratuitas</strong> para a população. A empresa poderá se sustentar com contratos de serviços com instituições públicas e privadas, divulgação de parceiros e participação em projetos de educação ambiental.</p>
+            <p><strong>Diferencial:</strong> reunir, em um só lugar, o registro de problemas ambientais e a localização de pontos adequados para o descarte de lixo eletrônico, usando mapas, geolocalização, banco de dados e inteligência artificial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEMANA 3 -->
+    <section id="diagnostico" class="section section-alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="tag">Semana 3</span>
+          <h2>Diagnóstico ambiental</h2>
+          <p>Mesmo sendo uma empresa voltada à sustentabilidade, a Deu Verde usa energia, equipamentos, água e materiais de escritório, e por isso também gera impactos.</p>
+        </header>
+
+        <div class="flow reveal" aria-label="Entradas, processos e saídas">
+          <div class="flow-col">
+            <h3>Entradas</h3>
+            <ul class="list">
+              <li>Energia elétrica</li><li>Equipamentos eletrônicos</li><li>Internet e serviços em nuvem</li>
+              <li>Água</li><li>Materiais de escritório</li><li>Recursos humanos</li>
+            </ul>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">➜</div>
+          <div class="flow-col">
+            <h3>Processos</h3>
+            <ul class="list">
+              <li>Desenvolver e manter a plataforma</li><li>Receber e verificar denúncias</li><li>Organizar e atualizar pontos de coleta</li>
+              <li>Usar mapas e geolocalização</li><li>Orientar sobre o descarte correto</li><li>Encaminhar ocorrências, quando houver parceria</li>
+            </ul>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">➜</div>
+          <div class="flow-col">
+            <h3>Saídas</h3>
+            <ul class="list">
+              <li>Plataforma digital</li><li>Registros organizados de ocorrências</li><li>Informações sobre pontos de coleta</li>
+              <li>Orientações de descarte</li><li>Resíduos comuns e recicláveis do escritório</li><li>Equipamentos antigos a destinar</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card reveal">
+            <h3>Aspectos e impactos</h3>
+            <ul class="list">
+              <li><strong>Energia elétrica:</strong> emissão indireta de gases de efeito estufa, conforme a fonte.</li>
+              <li><strong>Computadores e celulares:</strong> uso de recursos naturais na fabricação e geração de resíduos eletrônicos.</li>
+              <li><strong>Descarte incorreto de eletrônicos:</strong> risco de contaminação do solo e da água.</li>
+              <li><strong>Papel:</strong> consumo de matéria-prima e geração de resíduos.</li>
+              <li><strong>Nuvem e servidores:</strong> consumo de energia nos centros de dados.</li>
+              <li><strong>Resíduos comuns:</strong> aumento do volume enviado à destinação final.</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Como reduzir</h3>
+            <ul class="list ok">
+              <li>Desligar equipamentos fora de uso.</li>
+              <li>Imprimir menos e priorizar arquivos digitais.</li>
+              <li>Levar eletrônicos sem uso a pontos de coleta adequados.</li>
+              <li>Evitar desperdício de água.</li>
+              <li>Manter e reutilizar equipamentos sempre que possível.</li>
+              <li>Separar resíduos recicláveis e comuns.</li>
+              <li>Promover educação ambiental sobre o descarte incorreto.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEMANA 4 -->
+    <section id="legislacao" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="tag">Semana 4</span>
+          <h2>Legislação e prevenção</h2>
+          <p>A Deu Verde pretende seguir as normas brasileiras sobre resíduos sólidos, lixo eletrônico e logística reversa.</p>
+        </header>
+
+        <div class="grid grid-2">
+          <article class="card law reveal">
+            <h3>Lei nº 12.305/2010</h3>
+            <p class="law-name">Política Nacional de Resíduos Sólidos</p>
+            <p>Define princípios e responsabilidades de fabricantes, comerciantes, consumidores e poder público na gestão dos resíduos.</p>
+            <a href="https://www2.camara.leg.br/legin/fed/lei/2010/lei-12305-2-agosto-2010-607598-normaatualizada-pl.html" target="_blank" rel="noopener">Ler a lei</a>
+          </article>
+          <article class="card law reveal">
+            <h3>Decreto nº 10.240/2020</h3>
+            <p class="law-name">Logística reversa de eletroeletrônicos</p>
+            <p>Regras para o sistema de logística reversa de eletroeletrônicos de uso doméstico e seus componentes, ligado ao mapa de pontos de coleta.</p>
+            <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10240.htm" target="_blank" rel="noopener">Ler o decreto</a>
+          </article>
+          <article class="card law reveal">
+            <h3>Decreto nº 10.936/2022</h3>
+            <p class="law-name">Regulamenta a Política Nacional de Resíduos Sólidos</p>
+            <p>Orientações sobre gestão de resíduos, coleta seletiva, reciclagem e logística reversa.</p>
+            <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/decreto/d10936.htm" target="_blank" rel="noopener">Ler o decreto</a>
+          </article>
+          <article class="card law reveal">
+            <h3>Lei nº 9.605/1998</h3>
+            <p class="law-name">Lei de Crimes Ambientais</p>
+            <p>Estabelece sanções para condutas lesivas ao meio ambiente e ajuda a prevenir práticas que causem poluição e danos.</p>
+            <a href="https://www.planalto.gov.br/ccivil_03/leis/l9605.htm" target="_blank" rel="noopener">Ler a lei</a>
+          </article>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card reveal">
+            <h3>Logística reversa na prática</h3>
+            <p>Produtos e embalagens voltam a fabricantes, importadores, distribuidores ou comerciantes para receber destinação ambientalmente adequada. Na Deu Verde, o usuário escolhe o material, consulta os locais disponíveis, confere o endereço e leva o resíduo ao ponto indicado.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Responsabilidade ambiental</h3>
+            <ul class="list ok">
+              <li>Manter informações confiáveis sobre os pontos de coleta.</li>
+              <li>Buscar parcerias com entidades de reciclagem.</li>
+              <li>Evitar divulgar ocorrências sem verificação.</li>
+              <li>Proteger os dados pessoais dos usuários.</li>
+              <li>Fazer campanhas de conscientização.</li>
+              <li>Revisar periodicamente as práticas de sustentabilidade.</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3 class="subhead reveal">Problema e medida de prevenção</h3>
+        <div class="table-wrap reveal">
+          <table>
+            <thead><tr><th scope="col">Problema</th><th scope="col">Medida</th></tr></thead>
+            <tbody>
+              <tr><td>Descarte irregular de eletrônicos</td><td>Indicar pontos de coleta adequados</td></tr>
+              <tr><td>Falta de informação sobre descarte</td><td>Oferecer orientações na plataforma</td></tr>
+              <tr><td>Acúmulo de resíduos em locais inadequados</td><td>Permitir o registro e o encaminhamento de ocorrências</td></tr>
+              <tr><td>Risco de contaminação por pilhas e baterias</td><td>Indicar locais de recebimento especializado</td></tr>
+              <tr><td>Desperdício de energia</td><td>Incentivar o uso consciente de equipamentos</td></tr>
+              <tr><td>Resíduos no escritório</td><td>Separar materiais e destinar corretamente</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEMANA 5 -->
+    <section id="gestao" class="section section-alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="tag">Semana 5</span>
+          <h2>Gestão ambiental</h2>
+          <p>A Deu Verde se compromete a usar a tecnologia para preservar o meio ambiente, incentivar o descarte correto e reduzir os impactos das suas próprias atividades.</p>
+        </header>
+
+        <div class="grid grid-2">
+          <article class="card reveal">
+            <h3>Política ambiental</h3>
+            <ul class="list ok">
+              <li>Incentivar o descarte correto de lixo eletrônico.</li>
+              <li>Facilitar a identificação e a denúncia de descartes irregulares.</li>
+              <li>Promover reciclagem e logística reversa.</li>
+              <li>Reduzir o consumo de papel, água e energia no escritório.</li>
+              <li>Fazer parcerias com cooperativas, recicladoras e órgãos públicos.</li>
+              <li>Divulgar informações sobre sustentabilidade.</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Objetivos ambientais</h3>
+            <ol class="steps">
+              <li>Aumentar o acesso a informações sobre pontos de coleta de lixo eletrônico.</li>
+              <li>Incentivar a participação dos cidadãos na identificação de problemas ambientais.</li>
+              <li>Contribuir para reduzir o descarte irregular.</li>
+              <li>Promover a reutilização e a reciclagem de eletrônicos.</li>
+              <li>Reduzir o consumo de recursos naturais internos.</li>
+              <li>Ampliar parcerias com instituições de sustentabilidade.</li>
+            </ol>
+          </article>
+        </div>
+
+        <h3 class="subhead reveal">Indicadores ambientais</h3>
+        <div class="grid grid-4">
+          <article class="card indicator reveal"><h4>Denúncias registradas</h4><p>Ocorrências cadastradas na plataforma.</p></article>
+          <article class="card indicator reveal"><h4>Pontos de coleta</h4><p>Locais de descarte de lixo eletrônico no sistema.</p></article>
+          <article class="card indicator reveal"><h4>Usuários cadastrados</h4><p>Pessoas que usam a plataforma.</p></article>
+          <article class="card indicator reveal"><h4>Ocorrências encaminhadas</h4><p>Denúncias enviadas aos responsáveis.</p></article>
+          <article class="card indicator reveal"><h4>Parcerias ambientais</h4><p>Cooperativas, empresas e instituições parceiras.</p></article>
+          <article class="card indicator reveal"><h4>Consumo de energia</h4><p>Gasto de energia elétrica no escritório.</p></article>
+          <article class="card indicator reveal"><h4>Resíduos reciclados</h4><p>Materiais encaminhados para reciclagem.</p></article>
+        </div>
+
+        <h3 class="subhead reveal">Ações de sustentabilidade</h3>
+        <div class="grid grid-3">
+          <article class="card reveal"><h4>Campanhas educativas</h4><p>Conteúdos sobre os riscos do descarte incorreto e a importância da reciclagem.</p></article>
+          <article class="card reveal"><h4>Atualização dos mapas</h4><p>Manter atualizados os locais que recebem celulares, computadores, pilhas e baterias.</p></article>
+          <article class="card reveal"><h4>Incentivo às denúncias</h4><p>Registro facilitado por fotos e localização.</p></article>
+          <article class="card reveal"><h4>Parcerias</h4><p>Cooperação com prefeituras, cooperativas e empresas de reciclagem.</p></article>
+          <article class="card reveal"><h4>Economia de recursos</h4><p>Iluminação eficiente, menos papel e sem desperdício de água e energia.</p></article>
+          <article class="card reveal"><h4>Descarte responsável</h4><p>Eletrônicos sem utilidade vão para locais adequados de coleta.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEMANA 6 -->
+    <section id="plano" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="tag">Semana 6</span>
+          <h2>Plano de ação</h2>
+          <p>Melhorias, metas, prazos e responsáveis para colocar a Deu Verde em prática. As metas são estimativas iniciais e podem ser ajustadas conforme a plataforma cresce.</p>
+        </header>
+
+        <h3 class="subhead reveal">Metas para os primeiros 12 meses</h3>
+        <div class="grid grid-4 goals">
+          <article class="card goal reveal"><strong class="count" data-target="50">50</strong><span>pontos de coleta cadastrados</span></article>
+          <article class="card goal reveal"><strong class="count" data-target="500">500</strong><span>usuários cadastrados</span></article>
+          <article class="card goal reveal"><strong class="count" data-target="100">100</strong><span>denúncias recebidas, no mínimo</span></article>
+          <article class="card goal reveal"><strong class="count" data-target="5">5</strong><span>parcerias com instituições</span></article>
+        </div>
+        <p class="center reveal">Mais <strong>4 campanhas educativas</strong> e revisão periódica dos pontos de coleta.</p>
+
+        <h3 class="subhead reveal">Cronograma de execução</h3>
+        <ol class="timeline reveal">
+          <li><span class="when">1º mês</span><span>Planejamento da plataforma</span></li>
+          <li><span class="when">2º mês</span><span>Desenvolvimento do sistema de denúncias</span></li>
+          <li><span class="when">3º mês</span><span>Criação do mapa de pontos de coleta</span></li>
+          <li><span class="when">4º mês</span><span>Implementação do assistente virtual</span></li>
+          <li><span class="when">4º ao 6º mês</span><span>Busca por parcerias</span></li>
+          <li><span class="when">5º mês</span><span>Divulgação da plataforma</span></li>
+          <li><span class="when">6º ao 12º mês</span><span>Campanhas de educação ambiental</span></li>
+          <li><span class="when">A cada 3 meses</span><span>Avaliação dos resultados</span></li>
+        </ol>
+
+        <div class="grid grid-2">
+          <article class="card reveal">
+            <h3>Propostas de melhoria</h3>
+            <ol class="steps">
+              <li>Melhorar o sistema de denúncias, com fotos, descrições e localização.</li>
+              <li>Criar o mapa de pontos de coleta.</li>
+              <li>Adicionar um assistente virtual.</li>
+              <li>Ampliar parcerias com prefeituras, cooperativas e empresas de reciclagem.</li>
+              <li>Criar campanhas ambientais.</li>
+              <li>Oferecer uma experiência simples, organizada e fácil de usar.</li>
+            </ol>
+          </article>
+          <article class="card reveal">
+            <h3>Responsáveis e recursos</h3>
+            <ul class="list">
+              <li><strong>Desenvolvedor de sistemas:</strong> criar e manter a plataforma.</li>
+              <li><strong>Analista de geotecnologias:</strong> mapas e pontos de coleta.</li>
+              <li><strong>Gestor ambiental:</strong> orientar sobre descarte e sustentabilidade.</li>
+              <li><strong>Atendimento e comunicação:</strong> campanhas e usuários.</li>
+              <li><strong>Gestor administrativo:</strong> recursos, prazos e parcerias.</li>
+            </ul>
+            <p class="small"><strong>Recursos:</strong> computadores, internet, servidores e nuvem, ferramentas de desenvolvimento, sistemas de mapas e geolocalização, profissionais de TI e gestão ambiental e recursos financeiros para manutenção e divulgação.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSÃO -->
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-card reveal">
+          <h2>Inovadora, ambientalmente responsável e tecnologicamente viável.</h2>
+          <p>A Deu Verde mostra que a tecnologia pode aproximar a população das instituições responsáveis, tornando mais simples denunciar descartes irregulares e encontrar o ponto certo para descartar lixo eletrônico.</p>
+          <ul class="benefits">
+            <li>Identificar locais com descarte irregular</li>
+            <li>Ampliar o acesso à coleta de lixo eletrônico</li>
+            <li>Incentivar reciclagem e logística reversa</li>
+            <li>Reduzir riscos de contaminação do solo e da água</li>
+            <li>Promover a educação ambiental</li>
+          </ul>
+          <a class="btn btn-primary" href="#topo">Voltar ao topo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-note">Empresa fictícia criada para fins acadêmicos. A plataforma descrita não substitui os canais oficiais de denúncia ambiental. <!-- Dica: adicione aqui o nome da equipe e da instituição. --></p>
+
+      <div class="footer-cols">
+        <div>
+          <div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="32" height="32">Deu Verde</div>
+          <p>Tecnologia conectando pessoas a um planeta melhor.</p>
+        </div>
+        <div>
+          <h3>O projeto</h3>
+          <ul>
+            <li><a href="#ideia">A ideia</a></li>
+            <li><a href="#prototipo">Protótipo</a></li>
+            <li><a href="#empresa">A empresa</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Gestão</h3>
+          <ul>
+            <li><a href="#diagnostico">Diagnóstico ambiental</a></li>
+            <li><a href="#gestao">Gestão ambiental</a></li>
+            <li><a href="#plano">Plano de ação</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Legislação</h3>
+          <ul>
+            <li><a href="https://www2.camara.leg.br/legin/fed/lei/2010/lei-12305-2-agosto-2010-607598-normaatualizada-pl.html" target="_blank" rel="noopener">Lei 12.305/2010</a></li>
+            <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10240.htm" target="_blank" rel="noopener">Decreto 10.240/2020</a></li>
+            <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/decreto/d10936.htm" target="_blank" rel="noopener">Decreto 10.936/2022</a></li>
+            <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9605.htm" target="_blank" rel="noopener">Lei 9.605/1998</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Projeto Desafio Green Tech · Gestão Ambiental e Gestão da Tecnologia da Informação</span>
+        <span>Deu Verde</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
